@@ -214,7 +214,7 @@ const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList
     }
 
     return ( 
-        <div className="game-water-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`, backgroundImage: `url(${mapImage})`, backgroundSize: `${containerWidth}px`, backgroundColor: `grey`}}>
+        <div className="game-water-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`, backgroundImage: `url(${mapImage})`, backgroundSize: `${containerWidth}px`, backgroundColor: `#171717`}}>
             <Thief  containerHeight={containerHeight} containerWidth={containerWidth} positionX={boatPositionX} positionY={boatPositionY} boatImage={boatImage}/>
             <Paintings containerHeight={containerHeight} containerWidth={containerWidth} positionX={treasurePositionX} positionY={treasurePositionY} addFishToCaughtFishList={addFishToCaughtFishList}/>
         </div>

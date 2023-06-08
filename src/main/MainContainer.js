@@ -22,8 +22,8 @@ const MainContainer = () => {
     const [gameContainerWidth, setGameContainerWidth] = useState(600);
     const [gameContainerHeight, setGameContainerHeight] = useState(600);
 
-    const [treasurePositionX, setTreasurePositionX] = useState(70);
-    const [treasurePositionY, setTreasurePositionY] = useState(285);
+    const [treasurePositionX, setTreasurePositionX] = useState(270);
+    const [treasurePositionY, setTreasurePositionY] = useState(255);
 
     const [wallet, setWallet] = useState(0);
 

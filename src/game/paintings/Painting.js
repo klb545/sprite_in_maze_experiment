@@ -1,3 +1,4 @@
+import paintingSprite from '../../images/PaintingSprite.png'
 const Painting = ({containerHeight, containerWidth, positionX, positionY, addFishToCaughtFishList}) => {
 
     const black = <div className="pixel black-pixel"></div>
@@ -8,24 +9,32 @@ const Painting = ({containerHeight, containerWidth, positionX, positionY, addFis
     return ( 
         <div className='sprite' 
         style={{
-        height: "55px", 
-        width: "60px", 
+        height: "40px", 
+        width: "100px", 
         display: "flex", 
         position: "absolute",
         left: `${positionX}px`,
         top: `${positionY}px`,
-    }}>
-        <div>{black}{black}{black}{black}{black}{black}{black}</div>
-        <div>{black}{orange}{orange}{black}{orange}{orange}{black}</div>
-        <div>{black}{orange}{orange}{black}{orange}{orange}{black}</div>
-        <div>{black}{orange}{orange}{yellow}{yellow}{orange}{black}</div>
-        <div>{black}{orange}{yellow}{black}{yellow}{orange}{black}</div>
-        <div>{black}{orange}{orange}{yellow}{yellow}{orange}{black}</div>
-        <div>{black}{orange}{orange}{black}{orange}{orange}{black}</div>
-        <div>{black}{orange}{orange}{black}{orange}{orange}{black}</div>
-        <div>{black}{black}{black}{black}{black}{black}{black}</div>
-    </div> 
+        }}>
+            <img src={paintingSprite} style={{width: "100px", height: "40px"}}/>
+        </div> 
      );
 }
  
 export default Painting;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
