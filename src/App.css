@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: black;
   color: white;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.caught-fish{
+  background-color: rgb(132, 132, 132);
+  padding: 20px;
+  margin: 30px;
+  color: black;
+  height: 560px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.market-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  margin: 30px;
+  gap: 10px;
+}
+
+.game-water-container{
+  /* background-image: url(".src/images/mapImage.png"); */
+  margin: 30px;
+  position: relative;
+  justify-self: center;
+}
+
+ /* Universal pixel colours */
+.pixel{
+  background-color: transparent;
+  height: 5px;
+  width: 5px;
+}
+.black-pixel{
+  background-color: black;
+}
+.white-pixel{
+  background-color: white;
+}
+
+ /* Duck-specific pixel colours */
+.duck-yellow-pixel{
+  background-color: #F6C904;
+}
+.duck-orange-pixel{
+  background-color: rgb(246,105,4);
+}
+
+
+/* Boat-specific pixel colours */
+.boat-yellow-pixel {
+  background-color: rgb(249,193,61);
+}
+.boat-red-pixel {
+  background-color: rgb(193,46,55);
+}
+.boat-pink-pixel {
+  background-color: rgb(225,95,127);
+}
+.boat-blue-pixel {
+  background-color: rgb(120,176,211);
+}
+.boat-brown-pixel {
+  background-color: rgb(99,71,60);
+}
+.boat-cream-pixel {
+  background-color: rgb(227,198,151);
+}
+
+.table td {
+  text-align: center;
+  width: 200px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
