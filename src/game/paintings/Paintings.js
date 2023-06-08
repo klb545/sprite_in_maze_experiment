@@ -1,8 +1,8 @@
 import Painting from "./Painting";
 
-const Paintings = ({containerHeight, containerWidth, positionX, positionY, displayMultipleChoiceQuestion}) => {
+const Paintings = ({containerHeight, containerWidth, paintingPositionX, paintingPositionY, displayMultipleChoiceQuestion}) => {
     return ( 
-        <Painting containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
+        <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX={paintingPositionX} paintingPositionY={paintingPositionY} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
      );
 }
  

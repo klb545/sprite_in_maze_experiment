@@ -216,7 +216,7 @@ const GameContainer = ({containerWidth, containerHeight, displayMultipleChoiceQu
     return ( 
         <div className="map-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`, backgroundImage: `url(${mapImage})`, backgroundSize: `${containerWidth}px`, backgroundColor: `#171717`}}>
             <Thief  containerHeight={containerHeight} containerWidth={containerWidth} thiefPositionX={thiefPositionX} thiefPositionY={thiefPositionY} thiefImage={thiefImage}/>
-            <Paintings containerHeight={containerHeight} containerWidth={containerWidth} positionX={paintingPositionX} positionY={paintingPositionY} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
+            <Paintings containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX={paintingPositionX} paintingPositionY={paintingPositionY} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
         </div>
      );
 }
