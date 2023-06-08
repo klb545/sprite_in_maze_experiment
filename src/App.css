@@ -4,78 +4,35 @@ body {
   font-family: 'Courier New', Courier, monospace;
   margin: 30px;
 }
+/* .App{
+  display: grid;
+} */
 
 .main-container{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-areas: "a a" 20vh "b c" 65vh / 1fr 1fr;
   gap: 10px;
 }
-
+.navbar{
+  grid-area: a;
+  text-align: center;
+}
+.map-container{
+  grid-area: b;
+  margin: 30px;
+  position: relative;
+  /* justify-self: center; */
+}
 .caught-fish{
+  grid-area: c;
   background-color: rgb(132, 132, 132);
   padding: 20px;
   margin: 30px;
   color: black;
-  height: 560px;
-  overflow-y: auto;
-  overflow-x: auto;
-}
-
-.market-list{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 20px;
-  margin: 30px;
-  gap: 10px;
-}
-
-.game-water-container{
-  /* background-image: url(".src/images/mapImage.png"); */
-  margin: 30px;
-  position: relative;
-  justify-self: center;
-}
-
- /* Universal pixel colours */
-.pixel{
-  background-color: transparent;
-  height: 5px;
-  width: 5px;
-}
-.black-pixel{
-  background-color: black;
-}
-.white-pixel{
-  background-color: white;
-}
-
- /* Duck-specific pixel colours */
-.duck-yellow-pixel{
-  background-color: #F6C904;
-}
-.duck-orange-pixel{
-  background-color: rgb(246,105,4);
-}
-
-
-/* Boat-specific pixel colours */
-.boat-yellow-pixel {
-  background-color: rgb(249,193,61);
-}
-.boat-red-pixel {
-  background-color: rgb(193,46,55);
-}
-.boat-pink-pixel {
-  background-color: rgb(225,95,127);
-}
-.boat-blue-pixel {
-  background-color: rgb(120,176,211);
-}
-.boat-brown-pixel {
-  background-color: rgb(99,71,60);
-}
-.boat-cream-pixel {
-  background-color: rgb(227,198,151);
+  /* height: 560px; */
+  /* overflow-y: auto; */
+  /* overflow-x: auto; */
 }
 
 .table td {

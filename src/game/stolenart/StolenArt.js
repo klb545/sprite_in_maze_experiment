@@ -22,3 +22,11 @@ const StolenArt = ({fishObject, increaseWallet, removeFromCaughtFishList}) => {
 }
  
 export default StolenArt;
+
+
+
+
+
+
+
+

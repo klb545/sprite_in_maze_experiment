@@ -3,192 +3,192 @@ import Thief from "./Thief";
 import { useState } from "react";
 import mapImage from '../images/mapPrototype2.png';
 
-const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList, treasurePositionX, treasurePositionY}) => {
-    const [boatPositionX, setBoatPositionX] = useState(500);
-    const [boatPositionY, setBoatPositionY] = useState(500);
-    const [boatImage, setboatImage] = useState("heading left");
+const GameContainer = ({containerWidth, containerHeight, displayMultipleChoiceQuestion, paintingPositionX, paintingPositionY}) => {
+    const [thiefPositionX, setThiefPositionX] = useState(500);
+    const [thiefPositionY, setThiefPositionY] = useState(500);
+    const [thiefImage, setThiefImage] = useState("heading left");
     
-    const boatSpeed = 5;
+    const theifSpeed = 5;
 
-    const checkIfNearFish = () => {
+    const checkIfNearPainting = () => {
         const proximityLimit = 40;
-        const distance = Math.sqrt(Math.pow(boatPositionX - treasurePositionX, 2) + Math.pow(boatPositionY - treasurePositionY, 2));
+        const distance = Math.sqrt(Math.pow(thiefPositionX - paintingPositionX, 2) + Math.pow(thiefPositionY - paintingPositionY, 2));
         if (distance <= proximityLimit) {
-            addFishToCaughtFishList();
+            displayMultipleChoiceQuestion();
           }
     }
     // 0, 43, 85, 128, 
     const moveRight = () => {
-        if((boatPositionX <= 495)){
-            if(boatPositionY >= 495){
-                if(boatPositionX >= 450){
-                    setBoatPositionX(boatPositionX + boatSpeed);
-                    setboatImage("heading right");
+        if((thiefPositionX <= 495)){
+            if(thiefPositionY >= 495){
+                if(thiefPositionX >= 450){
+                    setThiefPositionX(thiefPositionX + theifSpeed);
+                    // setThiefImage("heading right");
                 }
-                if(boatPositionX <= 310){
-                    setBoatPositionX(boatPositionX + boatSpeed);
-                    setboatImage("heading right");
-                }
-            }
-            if(boatPositionY >= 315 && boatPositionY <= 490){
-                if(boatPositionX >= 450){
-                    setBoatPositionX(boatPositionX + boatSpeed);
-                    setboatImage("heading right");
-                }
-                if(boatPositionX <= 85){
-                    setBoatPositionX(boatPositionX + boatSpeed);
-                    setboatImage("heading right");
+                if(thiefPositionX <= 310){
+                    setThiefPositionX(thiefPositionX + theifSpeed);
+                    // setThiefImage("heading right");
                 }
             }
-            if(boatPositionY >= 265 && boatPositionY <= 315){
-                setBoatPositionX(boatPositionX + boatSpeed);
-                setboatImage("heading right");
-            }
-            if(boatPositionY >= 90 && boatPositionY <= 265){
-                if(boatPositionX >= 90 && boatPositionX <= 160){
-                    setBoatPositionX(boatPositionX + boatSpeed);
-                    setboatImage("heading right");
+            if(thiefPositionY >= 315 && thiefPositionY <= 490){
+                if(thiefPositionX >= 450){
+                    setThiefPositionX(thiefPositionX + theifSpeed);
+                    // setThiefImage("heading right");
                 }
-                if(boatPositionX >= 400 && boatPositionX <= 530){
-                    setBoatPositionX(boatPositionX + boatSpeed);
-                    setboatImage("heading right");
+                if(thiefPositionX <= 85){
+                    setThiefPositionX(thiefPositionX + theifSpeed);
+                    // setThiefImage("heading right");
                 }
             }
-            if(boatPositionY >= 40 && boatPositionY <= 90){
-                setBoatPositionX(boatPositionX + boatSpeed);
-                setboatImage("heading right");
+            if(thiefPositionY >= 265 && thiefPositionY <= 315){
+                setThiefPositionX(thiefPositionX + theifSpeed);
+                // setThiefImage("heading right");
             }
-            if(boatPositionY > 0 && boatPositionY <= 40){
-                if(boatPositionX >= 90 && boatPositionX <= 160){
-                    setBoatPositionX(boatPositionX + boatSpeed);
-                    setboatImage("heading right");
+            if(thiefPositionY >= 90 && thiefPositionY <= 265){
+                if(thiefPositionX >= 90 && thiefPositionX <= 160){
+                    setThiefPositionX(thiefPositionX + theifSpeed);
+                    // setThiefImage("heading right");
+                }
+                if(thiefPositionX >= 400 && thiefPositionX <= 530){
+                    setThiefPositionX(thiefPositionX + theifSpeed);
+                    // setThiefImage("heading right");
+                }
+            }
+            if(thiefPositionY >= 40 && thiefPositionY <= 90){
+                setThiefPositionX(thiefPositionX + theifSpeed);
+                // setThiefImage("heading right");
+            }
+            if(thiefPositionY > 0 && thiefPositionY <= 40){
+                if(thiefPositionX >= 90 && thiefPositionX <= 160){
+                    setThiefPositionX(thiefPositionX + theifSpeed);
+                    // setThiefImage("heading right");
                 }
             }
         }
     }
     const moveLeft = () => {
-        if(boatPositionX >= 45){
-            if(boatPositionY >= 490){
-                if(boatPositionX >= 460 && boatPositionX <= 530){
-                    setBoatPositionX(boatPositionX - boatSpeed);
-                    setboatImage("heading left");
+        if(thiefPositionX >= 45){
+            if(thiefPositionY >= 490){
+                if(thiefPositionX >= 460 && thiefPositionX <= 530){
+                    setThiefPositionX(thiefPositionX - theifSpeed);
+                    // setThiefImage("heading left");
                 }
-                if(boatPositionX <= 320){
-                    setBoatPositionX(boatPositionX - boatSpeed);
-                    setboatImage("heading left");
-                }
-            }
-            if(boatPositionY >= 315 && boatPositionY <= 490){
-                if(boatPositionX >= 460){
-                    setBoatPositionX(boatPositionX - boatSpeed);
-                    setboatImage("heading left");
-                }
-                if(boatPositionX <= 100){
-                    setBoatPositionX(boatPositionX - boatSpeed);
-                    setboatImage("heading left");
+                if(thiefPositionX <= 320){
+                    setThiefPositionX(thiefPositionX - theifSpeed);
+                    // setThiefImage("heading left");
                 }
             }
-            if(boatPositionY >= 265 && boatPositionY <= 315){
-                setBoatPositionX(boatPositionX - boatSpeed);
-                setboatImage("heading left");
-            }
-            if(boatPositionY >= 90 && boatPositionY <= 265){
-                if(boatPositionX >= 460){
-                    setBoatPositionX(boatPositionX - boatSpeed);
-                    setboatImage("heading left");
+            if(thiefPositionY >= 315 && thiefPositionY <= 490){
+                if(thiefPositionX >= 460){
+                    setThiefPositionX(thiefPositionX - theifSpeed);
+                    // setThiefImage("heading left");
                 }
-                if(boatPositionX >= 120 && boatPositionX <= 200){
-                    setBoatPositionX(boatPositionX - boatSpeed);
-                    setboatImage("heading left");
+                if(thiefPositionX <= 100){
+                    setThiefPositionX(thiefPositionX - theifSpeed);
+                    // setThiefImage("heading left");
                 }
             }
-            if(boatPositionY >= 40 && boatPositionY <= 90){
-                setBoatPositionX(boatPositionX - boatSpeed);
-                setboatImage("heading left");
+            if(thiefPositionY >= 265 && thiefPositionY <= 315){
+                setThiefPositionX(thiefPositionX - theifSpeed);
+                // setThiefImage("heading left");
             }
-            if(boatPositionY > 0 && boatPositionY <= 40){
-                if(boatPositionX >= 120 && boatPositionX <= 200){
-                    setBoatPositionX(boatPositionX - boatSpeed);
-                    setboatImage("heading left");
+            if(thiefPositionY >= 90 && thiefPositionY <= 265){
+                if(thiefPositionX >= 460){
+                    setThiefPositionX(thiefPositionX - theifSpeed);
+                    // setThiefImage("heading left");
+                }
+                if(thiefPositionX >= 120 && thiefPositionX <= 200){
+                    setThiefPositionX(thiefPositionX - theifSpeed);
+                    // setThiefImage("heading left");
+                }
+            }
+            if(thiefPositionY >= 40 && thiefPositionY <= 90){
+                setThiefPositionX(thiefPositionX - theifSpeed);
+                // setThiefImage("heading left");
+            }
+            if(thiefPositionY > 0 && thiefPositionY <= 40){
+                if(thiefPositionX >= 120 && thiefPositionX <= 200){
+                    setThiefPositionX(thiefPositionX - theifSpeed);
+                    // setThiefImage("heading left");
                 }
             }
         }
     }
     const moveDown = () => {
-        if((boatPositionX >= 455 && boatPositionX <= 600 && boatPositionY <= 530)){
-            setBoatPositionY(boatPositionY + boatSpeed);
+        if((thiefPositionX >= 455 && thiefPositionX <= 600 && thiefPositionY <= 530)){
+            setThiefPositionY(thiefPositionY + theifSpeed);
         }
-        if(boatPositionX >= 160 && boatPositionX <= 455){
-            if(boatPositionY <= 80){
-                setBoatPositionY(boatPositionY + boatSpeed);
+        if(thiefPositionX >= 160 && thiefPositionX <= 455){
+            if(thiefPositionY <= 80){
+                setThiefPositionY(thiefPositionY + theifSpeed);
             }
-            if(boatPositionY <= 310 && boatPositionY >= 100){
-                setBoatPositionY(boatPositionY + boatSpeed);
+            if(thiefPositionY <= 310 && thiefPositionY >= 100){
+                setThiefPositionY(thiefPositionY + theifSpeed);
             }
-            if(boatPositionY <= 530 && boatPositionY >= 400){
-                setBoatPositionY(boatPositionY + boatSpeed);
-            }
-        }
-        if((boatPositionX >= 120 && boatPositionX <= 160)){
-            if(boatPositionY <= 310){
-                setBoatPositionY(boatPositionY + boatSpeed);
-            }
-            if(boatPositionY <= 530 && boatPositionY >= 400){
-                setBoatPositionY(boatPositionY + boatSpeed);
+            if(thiefPositionY <= 530 && thiefPositionY >= 400){
+                setThiefPositionY(thiefPositionY + theifSpeed);
             }
         }
-        if((boatPositionX >= 90 && boatPositionX <= 120)){
-            if(boatPositionY >= 530){
-                setBoatPositionY(boatPositionY + boatSpeed);
+        if((thiefPositionX >= 120 && thiefPositionX <= 160)){
+            if(thiefPositionY <= 310){
+                setThiefPositionY(thiefPositionY + theifSpeed);
+            }
+            if(thiefPositionY <= 530 && thiefPositionY >= 400){
+                setThiefPositionY(thiefPositionY + theifSpeed);
             }
         }
-        if(boatPositionX >= 45 && boatPositionX <= 90){
-            if(boatPositionY <= 80){
-                setBoatPositionY(boatPositionY + boatSpeed);
+        if((thiefPositionX >= 90 && thiefPositionX <= 120)){
+            if(thiefPositionY >= 530){
+                setThiefPositionY(thiefPositionY + theifSpeed);
             }
-            if(boatPositionY <= 530 && boatPositionY >= 100){
-                setBoatPositionY(boatPositionY + boatSpeed);
+        }
+        if(thiefPositionX >= 45 && thiefPositionX <= 90){
+            if(thiefPositionY <= 80){
+                setThiefPositionY(thiefPositionY + theifSpeed);
+            }
+            if(thiefPositionY <= 530 && thiefPositionY >= 100){
+                setThiefPositionY(thiefPositionY + theifSpeed);
             }
         }
     }
     const moveUp = () => {
-        if((boatPositionX >= 455 && boatPositionX <= 600)){
-            if(boatPositionY >= 45){
-                setBoatPositionY(boatPositionY - boatSpeed);
+        if((thiefPositionX >= 455 && thiefPositionX <= 600)){
+            if(thiefPositionY >= 45){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
         }
-        if(boatPositionX >= 160 && boatPositionX <= 455){
-            if(boatPositionY >= 45 && boatPositionY <= 110){
-                setBoatPositionY(boatPositionY - boatSpeed);
+        if(thiefPositionX >= 160 && thiefPositionX <= 455){
+            if(thiefPositionY >= 45 && thiefPositionY <= 110){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
-            if(boatPositionY >= 268 && boatPositionY <= 400){
-                setBoatPositionY(boatPositionY - boatSpeed);
+            if(thiefPositionY >= 268 && thiefPositionY <= 400){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
-            if(boatPositionY >= 490){
-                setBoatPositionY(boatPositionY - boatSpeed);
+            if(thiefPositionY >= 490){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
         }
-        if((boatPositionX >= 120 && boatPositionX <= 160)){
-            if(boatPositionY >= 10 && boatPositionY <= 350)setBoatPositionY(boatPositionY - boatSpeed);
+        if((thiefPositionX >= 120 && thiefPositionX <= 160)){
+            if(thiefPositionY >= 10 && thiefPositionY <= 350)setThiefPositionY(thiefPositionY - theifSpeed);
             
-            if(boatPositionY >= 490 && boatPositionY <= 600){
-                setBoatPositionY(boatPositionY - boatSpeed);
+            if(thiefPositionY >= 490 && thiefPositionY <= 600){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
         }
-        if((boatPositionX >= 90 && boatPositionX <= 120)){
-            if(boatPositionY >= 10 && boatPositionY <= 350){
-                setBoatPositionY(boatPositionY - boatSpeed);
+        if((thiefPositionX >= 90 && thiefPositionX <= 120)){
+            if(thiefPositionY >= 10 && thiefPositionY <= 350){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
-            if(boatPositionY >= 490 && boatPositionY <= 600){
-                setBoatPositionY(boatPositionY - boatSpeed);
+            if(thiefPositionY >= 490 && thiefPositionY <= 600){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
         }
-        if(boatPositionX >= 45 && boatPositionX <= 90){
-            if(boatPositionY >= 45 && boatPositionY <= 150){
-                setBoatPositionY(boatPositionY - boatSpeed);
+        if(thiefPositionX >= 45 && thiefPositionX <= 90){
+            if(thiefPositionY >= 45 && thiefPositionY <= 150){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
-            if(boatPositionY >= 270){
-                setBoatPositionY(boatPositionY - boatSpeed);
+            if(thiefPositionY >= 270){
+                setThiefPositionY(thiefPositionY - theifSpeed);
             }
         }
     }
@@ -210,13 +210,13 @@ const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList
             e.preventDefault();
             moveUp();
         }
-        checkIfNearFish();
+        checkIfNearPainting();
     }
 
     return ( 
-        <div className="game-water-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`, backgroundImage: `url(${mapImage})`, backgroundSize: `${containerWidth}px`, backgroundColor: `#171717`}}>
-            <Thief  containerHeight={containerHeight} containerWidth={containerWidth} positionX={boatPositionX} positionY={boatPositionY} boatImage={boatImage}/>
-            <Paintings containerHeight={containerHeight} containerWidth={containerWidth} positionX={treasurePositionX} positionY={treasurePositionY} addFishToCaughtFishList={addFishToCaughtFishList}/>
+        <div className="map-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`, backgroundImage: `url(${mapImage})`, backgroundSize: `${containerWidth}px`, backgroundColor: `#171717`}}>
+            <Thief  containerHeight={containerHeight} containerWidth={containerWidth} thiefPositionX={thiefPositionX} thiefPositionY={thiefPositionY} thiefImage={thiefImage}/>
+            <Paintings containerHeight={containerHeight} containerWidth={containerWidth} positionX={paintingPositionX} positionY={paintingPositionY} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
         </div>
      );
 }

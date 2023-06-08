@@ -1,11 +1,6 @@
 import paintingSprite from '../../images/PaintingSprite.png'
-const Painting = ({containerHeight, containerWidth, positionX, positionY, addFishToCaughtFishList}) => {
+const Painting = ({containerHeight, containerWidth, positionX, positionY, displayMultipleChoiceQuestion}) => {
 
-    const black = <div className="pixel black-pixel"></div>
-    const yellow = <div className="pixel duck-yellow-pixel"></div>
-    const orange = <div className="pixel brown-pixel" style={{backgroundColor: "brown"}}></div>
-    const transparent = <div className="pixel"></div>
-    
     return ( 
         <div className='sprite' 
         style={{

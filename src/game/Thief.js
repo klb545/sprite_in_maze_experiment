@@ -1,6 +1,6 @@
 import blob2 from '../images/blob2.png';
 
-const Thief = ({containerHeight, containerWidth, positionX, positionY, boatImage}) => {
+const Thief = ({containerHeight, containerWidth, thiefPositionX, thiefPositionY, thiefImage}) => {
     return ( 
         <div
             className="sprite boat-sprite"
@@ -9,8 +9,8 @@ const Thief = ({containerHeight, containerWidth, positionX, positionY, boatImage
                 width: "60px",
                 display: "flex",
                 position: "absolute",
-                left: `${positionX}px`,
-                top: `${positionY}px`,
+                left: `${thiefPositionX}px`,
+                top: `${thiefPositionY}px`,
                 }}
         >
             <img src={blob2}/>
