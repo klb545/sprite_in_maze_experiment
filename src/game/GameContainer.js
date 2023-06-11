@@ -4,20 +4,43 @@ import { useState } from "react";
 import mapImage from '../images/unnamed-1.png';
 import Painting from "./paintings/Painting";
 
-const GameContainer = ({containerWidth, containerHeight, displayMultipleChoiceQuestion, paintingPositionX, paintingPositionY}) => {
+const GameContainer = ({containerWidth, containerHeight, displayMultipleChoiceQuestion, paintingPosition1X, paintingPosition1Y, paintingPosition2X, paintingPosition2Y, paintingPosition3X, paintingPosition3Y, paintingPosition4X, paintingPosition4Y}) => {
     const [thiefPositionX, setThiefPositionX] = useState(480);
     const [thiefPositionY, setThiefPositionY] = useState(0);
     const [thiefImage, setThiefImage] = useState("heading down");
     
     const theifSpeed = 5;
 
-    const checkIfNearPainting = () => {
+    const checkIfNearPainting1 = () => {
         const proximityLimit = 40;
-        const distance = Math.sqrt(Math.pow(thiefPositionX - paintingPositionX, 2) + Math.pow(thiefPositionY - paintingPositionY, 2));
+        const distance = Math.sqrt(Math.pow(thiefPositionX - paintingPosition1X, 2) + Math.pow(thiefPositionY - paintingPosition1Y, 2));
         if (distance <= proximityLimit) {
             displayMultipleChoiceQuestion();
           }
     }
+
+    const checkIfNearPainting2 = () => {
+        const proximityLimit = 40;
+        const distance = Math.sqrt(Math.pow(thiefPositionX - paintingPosition2X, 2) + Math.pow(thiefPositionY - paintingPosition2Y, 2));
+        if (distance <= proximityLimit) {
+            displayMultipleChoiceQuestion();
+          }
+    }
+    const checkIfNearPainting3 = () => {
+        const proximityLimit = 40;
+        const distance = Math.sqrt(Math.pow(thiefPositionX - paintingPosition3X, 2) + Math.pow(thiefPositionY - paintingPosition3Y, 2));
+        if (distance <= proximityLimit) {
+            displayMultipleChoiceQuestion();
+          }
+    }
+    const checkIfNearPainting4 = () => {
+        const proximityLimit = 40;
+        const distance = Math.sqrt(Math.pow(thiefPositionX - paintingPosition4X, 2) + Math.pow(thiefPositionY - paintingPosition4Y, 2));
+        if (distance <= proximityLimit) {
+            displayMultipleChoiceQuestion();
+          }
+    }
+
     // 0, 43, 85, 128, 
     const moveRight = () => {
         setThiefImage("heading right");
@@ -170,17 +193,20 @@ const GameContainer = ({containerWidth, containerHeight, displayMultipleChoiceQu
             e.preventDefault();
             moveUp();
         }
-        checkIfNearPainting();
+        checkIfNearPainting1();
+        checkIfNearPainting2();
+        checkIfNearPainting3();
+        checkIfNearPainting4();
     }
 
     return ( 
         <div className="map-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`, backgroundImage: `url(${mapImage})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundColor: `black`, backgroundPosition: "center"}}>
             <Thief  containerHeight={containerHeight} containerWidth={containerWidth} thiefPositionX={thiefPositionX} thiefPositionY={thiefPositionY} thiefImage={thiefImage}/>
             {/* <Paintings containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX={paintingPositionX} paintingPositionY={paintingPositionY} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/> */}
-            <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX="150" paintingPositionY="40" displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
-            <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX="790" paintingPositionY="40" displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
-            <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX="190" paintingPositionY="720" displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
-            <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX="750" paintingPositionY="720" displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
+            <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX={paintingPosition1X} paintingPositionY={paintingPosition1Y} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
+            <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX={paintingPosition2X} paintingPositionY={paintingPosition2Y} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
+            <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX={paintingPosition3X} paintingPositionY={paintingPosition3Y} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
+            <Painting containerHeight={containerHeight} containerWidth={containerWidth} paintingPositionX={paintingPosition4X} paintingPositionY={paintingPosition4Y} displayMultipleChoiceQuestion={displayMultipleChoiceQuestion}/>
         </div>
      );
 }
