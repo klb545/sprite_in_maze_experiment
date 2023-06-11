@@ -5,8 +5,10 @@ import Navbar from "./Navbar";
 
 const MainContainer = () => {
 
-    const [gameContainerWidth, setGameContainerWidth] = useState(600);
-    const [gameContainerHeight, setGameContainerHeight] = useState(600);
+    const [gameContainerWidth, setGameContainerWidth] = useState(1082);
+    const [gameContainerHeight, setGameContainerHeight] = useState(800);
+    // const [gameContainerWidth, setGameContainerWidth] = useState(80);
+    // const [gameContainerHeight, setGameContainerHeight] = useState(80);
 
     const [paintingPositionX, setPaintingPositionX] = useState(270);
     const [paintingPositionY, setPaintingPositionY] = useState(255);    
